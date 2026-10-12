@@ -1,90 +1,118 @@
 <!doctype html>
-<html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>読後メモ | 読んで感じたこと</title>
-    <meta name="description" content="読んで感じたことを、短く残せるフォームです。匿名でも入力できます。">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="読後メモ">
-    <meta property="og:title" content="3分で書ける読後メモ">
-    <meta property="og:description" content="印象に残ったこと、気づいたこと、最近のことを短く残せます。匿名OK。">
-    <meta property="og:url" content="https://minori-kosaka.github.io/output-note/">
-    <meta property="og:image" content="https://minori-kosaka.github.io/output-note/ogp.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="3分で書ける読後メモ">
-    <meta name="twitter:description" content="印象に残ったこと、気づいたこと、最近のことを短く残せます。匿名OK。">
-    <meta name="twitter:image" content="https://minori-kosaka.github.io/output-note/ogp.png">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <main class="page">
-      <section class="form-shell" aria-labelledby="form-title">
-        <header class="form-header">
-          <h1 id="form-title">読んで感じたこと</h1>
-          <p class="lead">
-            印象に残ったことや気づいたことを、そのまま残してもらえたら嬉しいです。
-          </p>
-        </header>
+<html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>こさかみのりの Note アンケート</title>
+<style>
+:root{--paper:#F4EFE7;--ink:#3C3229;--brown:#89664E;--muted:#6E6257;--apricot:#EAD0C0;--sage:#D5D5C2;--line:#dfd4c5;--error:#a3322e;font-family:"Noto Sans JP","Yu Gothic UI","Hiragino Sans",system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.8;font-synthesis:none}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 85% 5%,#fffaf350,transparent 55%),var(--paper)}main{max-width:1120px;padding:28px 40px 72px;margin:auto}.badge{display:inline-block;margin:0;padding:0 0 0 10px;border-left:2px solid #cfb9a4;color:var(--muted);font-size:.72rem}.hero{position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:44px 0 40px}.hero-copy{position:relative;z-index:1;flex:1;min-width:0}.eyebrow{font-family:"Noto Serif JP","Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(1rem,2vw,1.25rem);letter-spacing:.16em;color:var(--brown);margin:0 0 20px}.hero h1{font-family:"Noto Serif JP","Yu Mincho","Hiragino Mincho ProN",serif;font-weight:600;line-height:1.45;font-size:clamp(1.8rem,3.8vw,2.9rem);letter-spacing:.025em;margin:0 0 24px}.hero-note{font-size:clamp(.85rem,1.5vw,1rem);font-weight:400;letter-spacing:.035em;line-height:1.9;margin:0;color:var(--muted)}.hero-art{position:relative;flex:0 0 230px;height:230px}.art-ring{position:absolute;width:160px;height:160px;left:0;top:25px;border-radius:50%;background:var(--apricot);opacity:.9}.art-ring:after{content:"";position:absolute;width:160px;height:160px;left:85px;top:57px;background:var(--sage);border-radius:50%;mix-blend-mode:multiply}.art-note{position:absolute;font-family:Georgia,serif;font-size:74px;line-height:1;color:#9A7459;right:1px;top:0;transform:rotate(7deg)}.art-dot{display:none}main>.hint{max-width:720px;margin:0 auto 18px;font-size:.83rem;color:var(--muted);padding:0 4px}form{max-width:720px;margin:auto;background:#fffcf8;border:1px solid #e5d9ca;border-radius:18px;padding:32px 36px;box-shadow:0 12px 44px #725e4310}section{min-width:0}.step-heading{padding-bottom:22px;margin-bottom:0;border-bottom:1px solid var(--line)}.step-pill{font-size:.7rem;letter-spacing:.13em;color:var(--brown)}h2{font-family:"Noto Serif JP","Yu Mincho",serif;font-size:1.45rem;font-weight:600;margin:6px 0 5px}.step-heading p{color:var(--muted);font-size:.8rem;margin:0}fieldset{min-width:0;border:0;border-bottom:1px solid #e9e0d5;padding:24px 0;margin:0;scroll-margin-top:24px}.question-heading,label.heading{display:block;font-size:1rem;font-weight:650;line-height:1.65;margin:0 0 12px}.question-heading small,.heading small,summary small{display:inline-block;vertical-align:middle;white-space:nowrap;font-size:.65rem;font-weight:500;color:var(--brown);background:#efe3d5;padding:2px 7px;margin-left:7px;border-radius:4px}label.choice{display:flex;align-items:center;gap:12px;min-height:48px;font-size:.93rem;color:#514539;padding:12px 14px;margin:8px 0;border:1px solid #e1d4c3;border-radius:9px;background:#fffdf9;cursor:pointer;transition:background .15s,border-color .15s}label.choice:hover{border-color:#b79c82;background:#f9f0e6}label.choice:has(input:checked){border-color:#9d9e81;background:#eeeee2;color:#4d513e;box-shadow:inset 3px 0 #969878}input[type=radio],input[type=checkbox]{width:19px;height:19px;flex-shrink:0;margin:0;accent-color:#85896a}input[type=text],input[type=number],select,textarea{width:100%;font:inherit;color:var(--ink);border:1px solid #d9cbb7;border-radius:9px;padding:13px 14px;background:#fbf7f0}select{min-height:50px}textarea{resize:vertical;min-height:122px;font-size:.91rem;line-height:1.9}::placeholder{color:#877b6d;opacity:1}small,.hint{color:var(--muted)}fieldset>small{display:block;line-height:1.7;font-size:.79rem;margin-top:10px}details{border-bottom:1px solid #e9e0d5}summary{font-size:.87rem;font-weight:500;cursor:pointer;padding:17px 0;color:var(--brown)}details fieldset{border:0;padding-top:8px;padding-bottom:22px}nav{display:flex;gap:12px;justify-content:flex-end;margin:24px 0 12px}button{font:inherit;font-weight:600;border:1px solid transparent;border-radius:9px;padding:13px 22px;background:#89664E;color:#fffdf8;cursor:pointer;min-height:48px}button:hover{background:#75533e}button.secondary{background:transparent;border-color:#d6c6b2;color:#79634f}#next{min-width:180px}#reuse{margin:20px 0;border:1px solid #d9d9c4;background:#f0f0e7;border-radius:12px;padding:18px}#savedSummary{font-size:.9rem;font-weight:600;margin:0 0 10px}#profile>.hint{font-size:.81rem}#forget{min-height:40px;padding:7px 0;font-size:.77rem;text-decoration:underline;color:#847361;background:transparent;border:0}#review{max-width:720px;margin:24px auto 0;padding:24px;background:#faf3e8;border:1px solid #decdb8;border-radius:12px}#review h2{font-size:1.2rem}#review p{font-size:.86rem;margin-bottom:0}.error,.field-error{color:var(--error)}.field-error{margin:10px 0 0;font-size:.82rem;font-weight:600}.invalid-question{border:2px solid #b43a34;border-radius:12px;background:#fff3ef;padding:20px 16px;margin:12px 0}.invalid-question .heading,.invalid-question .question-heading{color:var(--error)}.invalid-question select,.invalid-question input:not([type=radio]):not([type=checkbox]),.invalid-question textarea{border-color:#bf5d52}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #b49b7d;outline-offset:3px}[hidden]{display:none!important}@media(max-width:760px){main{padding:22px 24px 54px}.hero{padding:32px 0 30px;gap:12px}.hero-art{flex-basis:145px;height:170px}.art-ring,.art-ring:after{width:110px;height:110px}.art-ring{top:22px}.art-ring:after{left:55px;top:39px}.art-note{font-size:52px;right:-2px}.hero h1{font-size:clamp(1.65rem,4.6vw,2.25rem)}form{padding:28px 26px}}@media(max-width:520px){main{padding:18px 16px 44px}.hero{display:block;padding:30px 0 24px}.hero-copy{padding-right:0}.hero h1{font-size:clamp(1.55rem,6.3vw,1.95rem);letter-spacing:.015em;margin-bottom:18px}.eyebrow{font-size:.9rem;margin-bottom:16px}.hero-note{font-size:.8rem;padding-right:48px}.hero-note br{display:none}.hero-art{position:absolute;right:0;bottom:16px;width:78px;height:90px;opacity:.6;z-index:0}.art-ring,.art-ring:after{width:46px;height:46px}.art-ring{left:0;top:24px}.art-ring:after{left:24px;top:17px}.art-note{font-size:29px;right:3px;top:0}.hero-copy{z-index:1}form{padding:24px 20px;border-radius:14px}fieldset{padding:22px 0}label.choice{font-size:.89rem;padding:12px}.question-heading,label.heading{font-size:.96rem}.invalid-question{padding:18px 12px}nav button{flex:1;padding:12px}#next{width:100%}#review{padding:20px}main>.hint{font-size:.78rem}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 
-        <form id="feedback-form" class="feedback-form">
-          <div class="main-question">
-            <textarea
-              id="output"
-              name="output"
-              rows="8"
-              required
-              minlength="8"
-              maxlength="2000"
-              placeholder="印象に残ったこと、気づいたことなど"
-            ></textarea>
-          </div>
+/* Mobile final: readable type, comfortable touch targets, shorter header. */
+@media(max-width:600px){main{padding:16px 12px 32px;overflow-wrap:anywhere}.hero{padding:26px 6px 24px}.hero h1{font-size:clamp(1.45rem,6vw,2rem);line-height:1.5;letter-spacing:0;margin-bottom:14px}.eyebrow{font-size:.88rem;letter-spacing:.09em}.hero-note{font-size:.85rem;line-height:1.8;padding-right:45px}.hero-art{right:4px;bottom:18px}form{padding:22px 18px;border-radius:14px}.step-heading{padding-bottom:16px}h2{font-size:1.3rem}fieldset{padding:20px 0}.question-heading,label.heading{font-size:1rem;line-height:1.7;margin-bottom:10px}label.choice{font-size:1rem;min-height:50px;padding:12px;gap:10px}input[type=text],input[type=number],select,textarea{font-size:16px;padding:12px;max-width:100%}textarea{min-height:116px}fieldset>small{font-size:.8rem}nav{margin-top:22px;gap:10px}nav button{min-height:50px;font-size:1rem;padding:12px 10px}#next{width:100%}.invalid-question{padding:16px 10px;margin:10px 0}.badge{font-size:.68rem}}
 
-          <div class="sub-question">
-            <label id="extra-prompt-label" for="extraAnswer">最近のこと</label>
-            <textarea
-              id="extraAnswer"
-              name="extraAnswer"
-              rows="3"
-              maxlength="1200"
-            ></textarea>
-          </div>
+/* Question > answer > example > required marker. */
+.question-heading,label.heading{font-size:20px;font-weight:700;line-height:1.6;margin-bottom:14px;letter-spacing:.015em}
+label.choice{font-size:16px;font-weight:400;line-height:1.7}
+input[type=text],input[type=number],select,textarea{font-size:16px;line-height:1.8}
+input::placeholder,textarea::placeholder{font-size:14px;font-weight:400;line-height:1.8;color:#877b6d}
+.question-heading small,.heading small{font-size:11px;font-weight:500;line-height:1.5;padding:2px 6px;letter-spacing:0;vertical-align:middle}
+fieldset>small{font-size:12px;line-height:1.7}
+@media(max-width:600px){.question-heading,label.heading{font-size:19px;line-height:1.65;margin-bottom:13px}label.choice,input[type=text],input[type=number],select,textarea{font-size:16px}input::placeholder,textarea::placeholder{font-size:14px}.question-heading small,.heading small{font-size:11px}fieldset>small{font-size:12px}}
+</style>
+<main>
+<header class="hero"><div class="hero-copy"><p class="eyebrow">こさかみのりの Note</p><h1>練習で知りたいことが、<br>これからの記事に。</h1><p class="hero-note">読んで感じたことや、まだ解決していない疑問を、<br>記事づくりに活かします。</p></div><div class="hero-art" aria-hidden="true"><span class="art-ring"></span><span class="art-note">♪</span><span class="art-dot"></span></div></header>
 
-          <div class="name-row">
-            <label for="name">お名前またはニックネーム</label>
-            <input id="name" name="name" type="text" maxlength="80" autocomplete="name">
-          </div>
+<form id="survey" novalidate autocomplete="off">
+<section id="reading"><div class="step-heading"><span class="step-pill">01 / 02</span><h2>今回の記事について</h2></div>
+<fieldset aria-labelledby="question-title-1"><div class="question-heading" id="question-title-1">このアンケートへの回答は？ <small>必須</small></div>
+<label class="choice"><input type="radio" name="visitType" value="first" required>初めて</label>
+<label class="choice"><input type="radio" name="visitType" value="repeat">2回目以降</label></fieldset>
+<fieldset><label class="heading" for="discovery">この記事を読んだきっかけ <small>必須</small></label><select id="discovery" name="discovery" required><option value="">選んでください</option><option>Noteをフォローしている</option><option>Noteのおすすめ・検索</option><option>インターネット検索</option><option>その他</option></select></fieldset>
+<fieldset id="discoveryOtherGroup" hidden><label class="heading" for="discoveryOther">どこでこの記事を見つけましたか？</label><input id="discoveryOther" name="discoveryOther" type="text" maxlength="200" disabled placeholder="例：Instagram、知り合いから届いたリンク"></fieldset>
+<fieldset aria-labelledby="question-title-2"><div class="question-heading" id="question-title-2">この記事は、あなたにとってどうでしたか？ <small>必須</small></div>
+<label class="choice"><input type="radio" name="articleRating" value="役立った" required>役立った</label>
+<label class="choice"><input type="radio" name="articleRating" value="一部役立った">一部役立った</label>
+<label class="choice"><input type="radio" name="articleRating" value="自分には合わなかった">自分には合わなかった</label>
+<label class="choice"><input type="radio" name="articleRating" value="まだ判断できない">まだ判断できない</label></fieldset>
+<fieldset>
+<label class="heading" for="output">感想・気になったところ</label>
+<textarea id="output" name="output" maxlength="2000" placeholder="「ここが分かりやすかった」「ここをもっと知りたい」など、一言でも大丈夫です。"></textarea>
+</fieldset>
+<fieldset><label class="heading" for="concernDetail">今、演奏や練習・指導で困っていることはありますか？</label><textarea id="concernDetail" name="concernDetail" maxlength="2000" placeholder="例：高い音を吹くと、音色がきつくなる&#10;楽譜のリズムがうまく読めない&#10;後輩にどう教えたらよいか分からない"></textarea></fieldset>
+<fieldset id="needsOptions" aria-labelledby="question-title-3"><div class="question-heading" id="question-title-3">興味のあるものを教えてください</div></fieldset>
 
-          <input id="extraPrompt" name="extraPrompt" type="hidden">
-          <input id="source" name="source" type="hidden">
-          <input id="pageUrl" name="pageUrl" type="hidden">
+<nav><button type="button" id="next">次へ</button></nav></section>
+<section id="profile" hidden><div class="step-heading"><span class="step-pill">02 / 02</span><h2>あなたのこと</h2></div>
+<div id="reuse" hidden><p id="savedSummary"></p><label class="choice"><input type="radio" name="profileAction" value="reuse">前回と同じ内容を使う</label><label class="choice"><input type="radio" name="profileAction" value="edit" checked>確認・変更する</label></div>
 
-          <button id="submit-button" type="submit" aria-label="送信">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M3.7 11.2 20.1 4c.8-.4 1.7.4 1.3 1.2l-7.2 16.4c-.4.8-1.5.7-1.8-.1l-2.1-6.1-6.1-2.1c-.8-.3-.9-1.5-.1-1.8Z"/>
-              <path d="m10.6 14.8 4.7-4.7"/>
-            </svg>
-            <span>送信</span>
-          </button>
-          <p id="form-status" class="status" role="status" aria-live="polite"></p>
-        </form>
-      </section>
-      <p class="line-contact">
-        レッスンの相談などは<a href="https://lin.ee/EhSYxLR" target="_blank" rel="noopener">公式LINE</a>へ
-      </p>
-    </main>
+<div id="profileFields"><fieldset><label class="heading" for="nickname">ニックネーム</label><input id="nickname" name="nickname" type="text" maxlength="80" autocomplete="nickname" placeholder="呼ばれたいお名前があれば"></fieldset>
+<fieldset><label class="heading" for="role">あなたの立場 <small>必須</small></label><select id="role" name="role"><option value="">選んでください</option><option>小学生</option><option>中学生</option><option>高校生・高専生</option><option>大学生・専門学生</option><option>社会人</option><option>保護者</option><option>指導者</option><option>その他</option></select></fieldset>
+<fieldset><label class="heading" for="birthYear">あなたの生まれ年</label><input id="birthYear" name="birthYear" type="number" min="1900" max="2026" placeholder="例：2000"></fieldset>
+<fieldset><label class="heading" for="instrument">主に演奏している・関わっている楽器 <small>必須</small></label><select id="instrument" name="instrument"><option value="">選んでください</option><option>テナートロンボーン</option><option>テナーバストロンボーン</option><option>バストロンボーン</option><option>その他の金管楽器</option><option>木管楽器</option><option>打楽器</option><option>弦楽器・鍵盤楽器・その他</option><option>演奏していない</option></select></fieldset>
+<fieldset><label class="heading" for="instrumentHistory">楽器歴（いつ始めましたか？）</label><input id="instrumentHistory" name="instrumentHistory" type="text" maxlength="200" placeholder="例：中学1年で始めました"><small>「5年くらい」「社会人になってから」など、書きやすい形で大丈夫です。</small></fieldset>
 
-    <div id="thanks-modal" class="modal" hidden>
-      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="thanks-title">
-        <button class="modal-close" type="button" aria-label="閉じる">×</button>
-        <h2 id="thanks-title">送信完了</h2>
-        <p>ご質問・お問い合わせは公式LINEへどうぞ。</p>
-        <a class="line-button" href="https://lin.ee/EhSYxLR" target="_blank" rel="noopener">公式LINEを開く</a>
-      </div>
-    </div>
+</div>
 
-    <script src="script.js?v=20260510-3"></script>
-  </body>
-</html>
+<nav><button class="secondary" type="button" id="back">戻る</button><button type="submit">回答を送信する</button></nav>
+</section>
+<p id="error" role="alert" class="error"></p>
+</form><section id="review" hidden aria-live="polite"><h2>ありがとうございました</h2><p>回答を受け取りました。これからの記事づくりに活かします。</p></section></main>
+<script src="transport.js?v=20261012"></script>
+<script>
+const profileKeys=['nickname','role','birthYear','instrument','instrumentHistory'];
+const storageKey='note-survey-profile-v2';
+const form=document.querySelector('#survey');
+const error=document.querySelector('#error');
+let saved=null;
+try{saved=JSON.parse(localStorage.getItem(storageKey));if(saved?.version!==2||!saved.profile?.role||!saved.profile?.instrument)saved=null;}catch{}
+function choices(id,name,values){const parent=document.getElementById(id);for(const value of values){const label=document.createElement('label');label.className='choice';const input=document.createElement('input');input.type='checkbox';input.name=name;input.value=value;label.append(input,document.createTextNode(value));parent.append(label);}}
+choices('needsOptions','needs',['音の出し方・音色・音程をよくするコツ','練習の組み立て方や、上達に役立つ知識','楽譜の読み方・音楽の仕組み','実際の吹き方や練習を見られる動画','運指表など、練習中に使える資料','後輩や生徒への教え方','その他','特にない']);
+const discoveryField=form.elements.discovery;const otherGroup=document.querySelector('#discoveryOtherGroup');discoveryField.addEventListener('change',()=>{const other=discoveryField.value==='その他';otherGroup.hidden=!other;form.elements.discoveryOther.disabled=!other;});
+for(const name of ['needs'])for(const input of form.querySelectorAll('[name="'+name+'"]'))input.addEventListener('change',()=>{if(input.checked)for(const other of form.querySelectorAll('[name="'+name+'"]'))if(other!==input&&(input.value==='特にない'||other.value==='特にない'))other.checked=false;});
+function clearQuestion(field){const group=field.closest('fieldset');if(!group)return;group.classList.remove('invalid-question');group.querySelector('.field-error')?.remove();for(const input of group.querySelectorAll('input,select,textarea')){input.removeAttribute('aria-invalid');input.removeAttribute('aria-describedby');}}
+function showInvalid(field,move=true){const group=field.closest('fieldset')||field.parentElement;clearQuestion(field);group.classList.add('invalid-question');const message=document.createElement('p');message.className='field-error';message.id='validation-'+field.name;message.textContent=field.validity.valueMissing?(field.type==='radio'||field.tagName==='SELECT'?'ここを選んでください。':'ここを入力してください。'):'入力内容を確認してください。';group.append(message);for(const input of group.querySelectorAll('input,select,textarea')){input.setAttribute('aria-invalid','true');input.setAttribute('aria-describedby',message.id);}if(move){field.focus({preventScroll:true});group.scrollIntoView({behavior:'smooth',block:'center'});}return false;}
+function validate(section){const invalid=[];const groups=new Set();for(const field of section.querySelectorAll('input,select,textarea')){if(field.disabled)continue;if(!field.validity.valid){const group=field.closest('fieldset')||field.parentElement;if(!groups.has(group)){groups.add(group);invalid.push(field);showInvalid(field,false);}}}if(!invalid.length)return true;const first=invalid[0];const collapsed=first.closest('details');if(collapsed)collapsed.open=true;first.focus({preventScroll:true});(first.closest('fieldset')||first.parentElement).scrollIntoView({behavior:'smooth',block:'center'});return false;}
+for(const field of form.querySelectorAll('input,select,textarea'))for(const event of ['input','change'])field.addEventListener(event,()=>{if(field.validity.valid)clearQuestion(field);pendingPayload=null;document.querySelector('#review').hidden=true;});
+function action(){return form.querySelector('[name=profileAction]:checked')?.value||'edit';}
+function updateFields(){const disabled=action()==='reuse'&&!!saved;document.querySelector('#profileFields').hidden=disabled;for(const key of profileKeys){const field=form.elements[key];field.disabled=disabled;field.required=!disabled&&['role','instrument'].includes(key);}}
+let openedProfile=false;
+let pendingPayload=null;let sending=false;
+document.querySelector('#next').onclick=()=>{error.textContent='';if(!validate(document.querySelector('#reading')))return;const repeat=form.elements.visitType.value==='repeat';document.querySelector('#reuse').hidden=!(repeat&&saved);form.querySelector('[name=profileAction][value="'+(repeat&&saved?'reuse':'edit')+'"]').checked=true;if(!openedProfile&&saved)for(const key of profileKeys)form.elements[key].value=saved.profile[key]||'';openedProfile=true;document.querySelector('#savedSummary').textContent=saved?[saved.profile.nickname,saved.profile.role,saved.profile.instrument,saved.profile.instrumentHistory].filter(Boolean).join('／'):'';document.querySelector('#reading').hidden=true;document.querySelector('#profile').hidden=false;updateFields();document.querySelector('#profile').scrollIntoView({behavior:'smooth',block:'start'});};
+form.querySelectorAll('[name=profileAction]').forEach(el=>el.onchange=updateFields);
+document.querySelector('#back').onclick=()=>{document.querySelector('#reading').hidden=false;document.querySelector('#profile').hidden=true;document.querySelector('#review').hidden=true;document.querySelector('#reading').scrollIntoView({behavior:'smooth',block:'start'});};
+form.onsubmit=async event=>{event.preventDefault();if(sending)return;error.textContent='';if(document.querySelector('#profile').hidden){document.querySelector('#next').click();return;}if(!validate(document.querySelector('#reading'))){document.querySelector('#reading').hidden=false;document.querySelector('#profile').hidden=true;validate(document.querySelector('#reading'));return;}if(!validate(document.querySelector('#profile')))return;
+const data=new FormData(form);let profile={};const profileMode=action()==='reuse'&&saved?'reused':'new';if(profileMode==='reused')profile={...saved.profile};else for(const key of profileKeys)profile[key]=data.get(key)||'';
+const payload={schemaVersion:3,source:new URLSearchParams(location.search).get('source')||'unknown',name:profile.nickname||'',visitType:data.get('visitType'),articleRating:data.get('articleRating'),output:data.get('output')||'',concernDetail:data.get('concernDetail')||'',needs:data.getAll('needs'),articleDiscovery:data.get('discovery'),articleDiscoveryOther:data.get('discovery')==='その他'?(data.get('discoveryOther')||''):'',profileMode,...profile,userAgent:navigator.userAgent.slice(0,500)};
+if(!pendingPayload)pendingPayload={...payload,submissionId:crypto.randomUUID()};
+const controls=Array.from(form.querySelectorAll('input,select,textarea,button'));
+const disabledState=controls.map(control=>control.disabled);
+const submit=form.querySelector('[type=submit]');
+sending=true;controls.forEach(control=>control.disabled=true);submit.textContent='送信しています…';error.textContent='';
+try {
+ await sendSurvey(pendingPayload);
+ try{const record={version:2,profile};localStorage.setItem(storageKey,JSON.stringify(record));saved=record;}catch(storageError){}
+ document.querySelector('#reading').hidden=true;document.querySelector('#profile').hidden=true;
+ document.querySelector('#review').hidden=false;document.querySelector('#review').scrollIntoView({behavior:'smooth'});
+ pendingPayload=null;
+}catch(sendError){
+ error.textContent=sendError.message==='NOT_CONFIGURED'?'現在、回答を送信できません。時間をおいてお試しください。':'保存を確認できませんでした。入力内容は残っています。もう一度送信してください。';
+}finally{controls.forEach((control,i)=>control.disabled=disabledState[i]);sending=false;submit.textContent='回答を送信する';}
+};
+function startNewArticleResponse(){
+form.reset();pendingPayload=null;sending=false;
+openedProfile=false;
+document.querySelector('#reading').hidden=false;
+document.querySelector('#profile').hidden=true;
+document.querySelector('#review').hidden=true;
+
+document.querySelector('#reuse').hidden=true;
+
+otherGroup.hidden=true;
+form.elements.discoveryOther.disabled=true;
+for(const key of profileKeys){form.elements[key].disabled=false;form.elements[key].required=false;}
+for(const field of form.querySelectorAll('input,select,textarea'))clearQuestion(field);
+if(saved)form.querySelector('[name=visitType][value=repeat]').checked=true;
+error.textContent='';
+window.scrollTo({top:0,left:0,behavior:'instant'});
+}
+startNewArticleResponse();
+window.addEventListener('pageshow',startNewArticleResponse);
+</script></html>
+
