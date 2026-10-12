@@ -15,6 +15,9 @@ input::placeholder,textarea::placeholder{font-size:14px;font-weight:400;line-hei
 .question-heading small,.heading small{font-size:11px;font-weight:500;line-height:1.5;padding:2px 6px;letter-spacing:0;vertical-align:middle}
 fieldset>small{font-size:12px;line-height:1.7}
 @media(max-width:600px){.question-heading,label.heading{font-size:19px;line-height:1.65;margin-bottom:13px}label.choice,input[type=text],input[type=number],select,textarea{font-size:16px}input::placeholder,textarea::placeholder{font-size:14px}.question-heading small,.heading small{font-size:11px}fieldset>small{font-size:12px}}
+
+/* Completion: one primary action, a quiet lesson link. */
+#review{text-align:center;padding:32px 24px;background:#fffcf8;scroll-margin-top:24px}#review h2{font-size:clamp(22px,5.5vw,28px);line-height:1.6}#review>p{font-size:14px;line-height:1.9;color:var(--muted);margin:12px 0 0}.completion-follow{margin-top:28px}.completion-follow p{font-size:16px!important;margin:0 0 14px!important}.note-follow{display:flex;align-items:center;justify-content:center;gap:12px;max-width:340px;margin:auto;min-height:54px;padding:13px 20px;border-radius:9px;background:var(--brown);color:#fffdf8;text-decoration:none;font-size:16px;font-weight:600}.note-follow:hover{background:#75533e}.lesson-link{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;margin-top:20px;color:var(--muted);font-size:13px;text-decoration:underline;text-underline-offset:4px}.note-follow:focus-visible,.lesson-link:focus-visible{outline:3px solid #b49b7d;outline-offset:4px}@media(max-width:600px){#review{padding:28px 18px}.note-follow{width:100%}}
 </style>
 <main>
 <header class="hero"><div class="hero-copy"><p class="eyebrow">こさかみのりの Note</p><h1>練習で知りたいことが、<br>これからの記事に。</h1><p class="hero-note">読んで感じたことや、まだ解決していない疑問を、<br>記事づくりに活かします。</p></div><div class="hero-art" aria-hidden="true"><span class="art-ring"></span><span class="art-note">♪</span><span class="art-dot"></span></div></header>
@@ -53,7 +56,7 @@ fieldset>small{font-size:12px;line-height:1.7}
 <nav><button class="secondary" type="button" id="back">戻る</button><button type="submit">回答を送信する</button></nav>
 </section>
 <p id="error" role="alert" class="error"></p>
-</form><section id="review" hidden aria-live="polite"><h2>ありがとうございました</h2><p>回答を受け取りました。これからの記事づくりに活かします。</p></section></main>
+</form><section id="review" hidden aria-live="polite"><h2>ご回答ありがとうございました</h2><p>いただいた声を、これからの記事づくりに活かします。</p><div class="completion-follow"><p>次の記事も、練習のヒントに。</p><a class="note-follow" href="https://note.com/minori_kosaka" target="_blank" rel="noopener noreferrer">Noteをフォローする <span aria-hidden="true">↗</span></a></div><a class="lesson-link" href="https://music-porch.hp.peraichi.com/trombone-lesson" target="_blank" rel="noopener noreferrer">レッスンについてはこちら <span aria-hidden="true">↗</span></a></section></main>
 <script src="transport.js?v=20261012"></script>
 <script>
 const profileKeys=['nickname','role','birthYear','instrument','instrumentHistory'];
